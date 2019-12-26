@@ -5,6 +5,7 @@ import browserSync from 'browser-sync';
 import notify from 'gulp-notify';
 import plumber from 'gulp-plumber';
 import eslint from 'gulp-eslint';
+import webserver from 'gulp-webserver';
 
 //gulpタスクの生成
 gulp.task('build', function(cb){
@@ -31,6 +32,21 @@ gulp.task('bs-reload', function(cb){
   browserSync.reload();
   cb();
 });
+
+//webローカルサーバーを立ち上げる
+gulp.task("web", function(cb) {
+  gulp.src('dist')
+    .pipe(webserver({
+      livereload: true,
+      open: true,
+      port: 5000
+    }));
+  cb();
+});
+
+
+
+
 
 gulp.task('eslint', function(cb){
   gulp.src('src/**/*.js') //lintのチェック先を指定
