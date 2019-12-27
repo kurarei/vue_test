@@ -1,10 +1,10 @@
-import gulp from 'gulp';
+import gulp from 'gulp/index.js';
 import webpackConfig from './webpack.config';
-import webpack from 'webpack-stream';
-import browserSync from 'browser-sync';
-import notify from 'gulp-notify';
-import plumber from 'gulp-plumber';
-import eslint from 'gulp-eslint';
+import webpack from 'webpack-stream/index.js';
+import browserSync from 'browser-sync/dist/index.js';
+import notify from 'gulp-notify/index.js';
+import plumber from 'gulp-plumber/index.js';
+import eslint from 'gulp-eslint/index.js';
 import webserver from 'gulp-webserver';
 
 //gulpタスクの生成
@@ -34,15 +34,15 @@ gulp.task('bs-reload', function(cb){
 });
 
 //webローカルサーバーを立ち上げる
-gulp.task("web", function(cb) {
-  gulp.src('dist')
-    .pipe(webserver({
-      livereload: true,
-      open: true,
-      port: 5000
-    }));
-  cb();
-});
+// gulp.task("web", function(cb) {
+//   gulp.src('dist')
+//     .pipe(webserver({
+//       livereload: true,
+//       open: true,
+//       port: 5000
+//     }));
+//   cb();
+// });
 
 
 
