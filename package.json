@@ -7,12 +7,13 @@
     "build": "gulp build",
     "watch": "gulp",
     "dev": "gulp browser-sync",
-    "start": "npm run build && node server.js",
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "rei",
   "license": "ISC",
   "dependencies": {
+    "babel-register": "^6.26.0",
     "express": "^4.17.1",
     "gulp": "^4.0.2",
     "jquery": "^3.4.1",
